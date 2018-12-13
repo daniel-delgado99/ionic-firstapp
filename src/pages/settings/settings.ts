@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, Toggle } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 
-import { SettingsService } from '../../services/settings';
+import { SettingsProvider } from '../../providers/settings/settings';
 
 @IonicPage()
 @Component({
@@ -9,15 +9,18 @@ import { SettingsService } from '../../services/settings';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
+  selectedTheme: String;  
 
-  constructor (private settingsService: SettingsService) {}
-
-  onToggle(toggle: Toggle) {
-    this.settingsService.setTheme(toggle.checked);
+  constructor (private settingsProvider: SettingsProvider) {
+    this.settingsProvider.getActiveTheme().subscribe(val => this.selectedTheme = val);
   }
 
-  checkDarkTheme() {
-    return this.settingsService.isDarkTheme();
+  toggleAppTheme() {
+    if (this.selectedTheme == 'dark-theme') {
+      this.settingsProvider.setActiveTheme('light-theme');
+    } else {
+      this.settingsProvider.setActiveTheme('dark-theme');
+    }
   }
 
 }

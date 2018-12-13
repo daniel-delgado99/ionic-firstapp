@@ -22,8 +22,7 @@ export class QuotesPage {
   onAddToFavorite(quote: Quote) {
     const alert = this.alertCtrl.create({
       title: 'Add quote',
-      subTitle: 'Are you sure?',
-      message: 'Are you really sure sure?',
+      message: 'Do you want to add this quote to favorites?',
       buttons: [{
         text: 'Yes, let\'s go ahead',
         handler: () => {

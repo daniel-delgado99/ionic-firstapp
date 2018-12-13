@@ -10,14 +10,10 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-label>Dark theme</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-toggle (ionChange)="onToggle($event)" [checked]="checkDarkTheme()"></ion-toggle>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-list>
+    <ion-item>
+      <ion-label>Dark theme</ion-label>
+      <ion-toggle (ionChange)="toggleAppTheme()" [checked]="selectedTheme == 'dark-theme'"></ion-toggle>
+    </ion-item>
+  </ion-list>
 </ion-content>

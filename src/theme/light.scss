@@ -1,0 +1,8 @@
+.light-theme {
+    ion-content, .scroll-content, .content, .header .toolbar-background, .list {
+        transition: all .3s ease-in-out;
+    }
+    .item {
+        transition: all .3s ease-in-out;
+    }
+}

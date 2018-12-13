@@ -1,0 +1,35 @@
+.dark-theme {
+    ion-content, .scroll-content, .content, .list {
+        transition: all .3s ease-in-out;
+        background-color: #282828;
+        color: white !important;
+    }
+    .item, .toolbar-background {
+        transition: all .3s ease-in-out;
+        background-color: #454545;
+        color: white !important;
+    }
+
+    .toolbar-title, .bar-buttons {
+        color: white;
+    }
+}
+
+// dark theme
+// $background-md-color: #282828;
+// $list-background-color: #454545;
+// $text-color: #fff;
+// $card-md-text-color: #fff;
+// $card-md-title-text-color: #fff;
+// $tabs-background: #454545;
+// $tabs-md-tab-text-color: #fff;
+// $tabs-md-tab-color-inactive: #fff;
+// $toolbar-background: #454545;
+// $modal-md-background-color: #454545;
+// $alert-md-background-color: #454545;
+// $alert-md-input-text-color: #fff;
+// $alert-md-message-text-color: #fff;
+// $colors: (
+//   primary: #fff
+// );
+

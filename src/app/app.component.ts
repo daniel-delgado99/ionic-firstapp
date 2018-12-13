@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingsPage } from '../pages/settings/settings';
-import { SettingsService } from '../services/settings';
+import { SettingsProvider } from '../providers/settings/settings';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,13 +13,12 @@ import { SettingsService } from '../services/settings';
 export class MyApp {
   tabsPage = TabsPage;
   settingsPage = SettingsPage;
-  backgroundColor: any;
+  theme: any;
   @ViewChild('nav') nav: NavController;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl: MenuController, private settingsService: SettingsService) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl: MenuController, private settingsProvider: SettingsProvider) {
+    this.settingsProvider.getActiveTheme().subscribe(val => this.theme = val);
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
@@ -30,8 +29,8 @@ export class MyApp {
     this.menuCtrl.close();
   }
 
-  getBackground() {
-    this.backgroundColor = this.settingsService.isDarkTheme() ? 'darkThemeBg' : '';
-  }
+  // getTheme() {
+  //   return this.settingsService.isDarkTheme() ? 'dark-theme' : 'light-theme';
+  // }
 }
 

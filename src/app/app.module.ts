@@ -12,7 +12,8 @@ import { FavoritesPage } from '../pages/favorites/favorites';
 import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/tabs/tabs';
 import { QuotesService } from '../services/quotes';
-import { SettingsService } from '../services/settings';
+import { SettingsProvider } from '../providers/settings/settings';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SettingsService } from '../services/settings';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -43,7 +45,7 @@ import { SettingsService } from '../services/settings';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuotesService,
-    SettingsService
+    SettingsProvider
   ]
 })
 export class AppModule {}
