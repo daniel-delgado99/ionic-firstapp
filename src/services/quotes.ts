@@ -9,7 +9,7 @@ export class QuotesService {
 
     addQuoteToFavorites(quote: Quote) {
         this.favoriteQuotes.push(quote);
-        console.log(this.favoriteQuotes);
+        // console.log(this.favoriteQuotes);
     }
 
     removeQuoteToFavorites(quote: Quote) {
