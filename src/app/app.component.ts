@@ -28,9 +28,5 @@ export class MyApp {
     this.nav.setRoot(page);
     this.menuCtrl.close();
   }
-
-  // getTheme() {
-  //   return this.settingsService.isDarkTheme() ? 'dark-theme' : 'light-theme';
-  // }
 }
 

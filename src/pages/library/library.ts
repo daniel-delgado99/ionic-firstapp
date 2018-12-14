@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, reorderArray } from 'ionic-angular';
 
 import { Quote } from '../../data/quote.interface';
 import quotes from '../../data/quotes';
@@ -16,7 +16,6 @@ export class LibraryPage implements OnInit {
     quotes: Quote[],
     icon: string
   }[];
-  // quotesPage: QuotesPage;
 
   constructor(private navCtrl: NavController) {}
 
@@ -26,5 +25,9 @@ export class LibraryPage implements OnInit {
 
   onClickQuoteGroup(quoteGroup: {category: string, quotes: Quote[], icon: string}) {
     this.navCtrl.push(QuotesPage, quoteGroup)
+  }
+
+  reorderItems(indexes){
+    this.quoteCollection = reorderArray(this.quoteCollection, indexes);
   }
 }

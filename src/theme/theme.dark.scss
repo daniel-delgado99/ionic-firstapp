@@ -1,0 +1,55 @@
+.dark-theme {
+    .scroll-content,  ion-item-sliding, .list {
+        transition: all .3s ease-in-out;
+        background-color: #282828;
+        color: #fff !important;
+    }
+    .item, .toolbar-background, .card, .tabbar .tab-button {
+        transition: all .3s ease-in-out;
+        background-color: #454545;
+        color: #fff !important;
+        
+        p, .icon {
+            color: #fff !important;
+        }
+    }
+    .alert-wrapper {
+        background-color: #454545 !important;
+        color: #fff;
+    }
+    
+    p, .back-button, .toolbar-title, .bar-buttons {
+        color: #fff;
+    }
+
+    .menu-inner {
+        .scroll-content, .toolbar-background {
+            transition: all .3s ease-in-out;
+            background-color: #282828;
+        }
+        .item {
+            // background-color: #222222;
+            background-color: #454545;
+        }
+    }
+
+}
+
+// dark theme
+// $background-md-color: #282828;
+// $list-background-color: #454545;
+// $text-color: #fff;
+// $card-md-text-color: #fff;
+// $card-md-title-text-color: #fff;
+// $tabs-background: #454545;
+// $tabs-md-tab-text-color: #fff;
+// $tabs-md-tab-color-inactive: #fff;
+// $toolbar-background: #454545;
+// $modal-md-background-color: #454545;
+// $alert-md-background-color: #454545;
+// $alert-md-input-text-color: #fff;
+// $alert-md-message-text-color: #fff;
+// $colors: (
+//   primary: #fff
+// );
+

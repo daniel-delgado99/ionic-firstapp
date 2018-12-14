@@ -11,6 +11,7 @@
 
 <ion-content padding>
   <h4 text-center>Select your favorite quote</h4>
+  <!-- <ion-list reorder="true" (ionItemReorder)="reorderItems($event)"> -->
   <ion-list>
     <button ion-item *ngFor="let quoteGroup of quoteCollection" (click)="onClickQuoteGroup(quoteGroup)">
       <ion-icon [name]="quoteGroup.icon" item-left></ion-icon>

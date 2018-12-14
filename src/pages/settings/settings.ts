@@ -9,7 +9,7 @@ import { SettingsProvider } from '../../providers/settings/settings';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
-  selectedTheme: String;  
+  selectedTheme: string;  
 
   constructor (private settingsProvider: SettingsProvider) {
     this.settingsProvider.getActiveTheme().subscribe(val => this.selectedTheme = val);

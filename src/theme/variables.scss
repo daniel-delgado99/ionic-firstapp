@@ -23,8 +23,6 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
-@import "dark";
-@import "light";
 
 
 // Named Color Variables
@@ -73,6 +71,10 @@ $colors: (
 // default are overridden.
 
 @import "ionic.theme.default";
+
+@import "theme.dark";
+@import "theme.light";
+
 
 
 // Ionicons

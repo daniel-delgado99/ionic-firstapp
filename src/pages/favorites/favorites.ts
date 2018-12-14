@@ -3,6 +3,7 @@ import { IonicPage, ModalController } from 'ionic-angular';
 import { Quote } from '../../data/quote.interface';
 import { QuotesService } from '../../services/quotes';
 import { QuotePage } from '../quote/quote';
+import { SettingsProvider } from '../../providers/settings/settings';
 
 @IonicPage()
 @Component({
@@ -11,15 +12,18 @@ import { QuotePage } from '../quote/quote';
 })
 export class FavoritesPage {
   quotes: Quote[];
+  selectedTheme: string;
 
-  constructor(private quoteService: QuotesService, private modalCtrl: ModalController) {}
+  constructor(private quoteService: QuotesService, private modalCtrl: ModalController, private settingsProvider: SettingsProvider) {
+    this.settingsProvider.getActiveTheme().subscribe(val => this.selectedTheme = val);
+  }
 
   ionViewWillEnter() {
     this.quotes = this.quoteService.getFavoriteQuotes();
   }
 
   onViewQuote(quote: Quote) {
-    const modal = this.modalCtrl.create(QuotePage, quote);
+    const modal = this.modalCtrl.create(QuotePage, {person: quote.person, text: quote.text}, {cssClass: this.selectedTheme});
     modal.present();
     modal.onDidDismiss((remove: boolean) => {
       if (remove) {
