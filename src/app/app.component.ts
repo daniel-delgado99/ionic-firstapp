@@ -9,6 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { SettingsProvider } from '../providers/settings/settings';
 import { AuthService } from '../services/auth';
+import { environment } from '../../environment/environment';
 
 import * as firebase from 'firebase/app';
 
@@ -26,16 +27,7 @@ export class MyApp {
   @ViewChild('nav') nav: NavController;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl: MenuController, private settingsProvider: SettingsProvider, private authService: AuthService) {
-    const config = {
-      apiKey: "AIzaSyCWBsKipslGrK2s3bghyuwRrbM3fuSi_Og",
-      authDomain: "ionic-project-b6a2a.firebaseapp.com",
-      databaseURL: "https://ionic-project-b6a2a.firebaseio.com",
-      projectId: "ionic-project-b6a2a",
-      storageBucket: "ionic-project-b6a2a.appspot.com",
-      messagingSenderId: "1064738980138"
-    };
-    firebase.initializeApp(config);
-
+    firebase.initializeApp(environment);
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.isAuthenticated = true;
