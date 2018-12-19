@@ -14,6 +14,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { QuotesService } from '../services/quotes';
 import { SettingsProvider } from '../providers/settings/settings';
 import { HttpClientModule } from '@angular/common/http'; 
+import { LoginPage } from '../pages/login/login';
+import { AuthService } from '../services/auth';
+import { SignupPage } from '../pages/signup/signup';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     QuotePage,
     FavoritesPage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -38,14 +43,17 @@ import { HttpClientModule } from '@angular/common/http';
     QuotePage,
     FavoritesPage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuotesService,
-    SettingsProvider
+    SettingsProvider,
+    AuthService
   ]
 })
 export class AppModule {}
